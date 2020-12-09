@@ -73,12 +73,15 @@ function baiduADsBlock(){
       })
     })
   }
+  
   $(document).bind('DOMNodeInserted', function(e) {
      handleInserted();
   });
+
   $(document).on('click', 'a', function(e) {
     e.stopPropagation();
   })
+
   let opening = false;
   $(document).on('click', '.c-container', function(e) {
     e.stopPropagation();
@@ -99,4 +102,5 @@ function baiduADsBlock(){
       }, 200)
     }
   })
+
 }
