@@ -1,0 +1,19 @@
+
+{
+    "manifest_version": 2,
+    "name": "Baidu Hide AD",
+    "version": "1.0.0",
+    "description": "hidden Baidu.com ADs",
+    "permissions": ["tabs"],
+    "browser_action": {
+      "default_popup": "index.html"
+    },
+    "content_scripts": [
+       {
+         "matches": ["http://www.baidu.com/*", "https://www.baidu.com/*"],
+         "css": ["baidu.css"],
+         "js": ["jquery.min.js", "contentscript.js"]
+       }
+     ],
+    "content_security_policy": "script-src 'self' https://unpkg.com ; object-src 'self'"
+}

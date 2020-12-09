@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.mui-switch {
+  position: relative;
+  margin: 20px;
+  display: block;
+  width: 74px;
+  height: 30px;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-property: background-color,border;
+  transition-property: background-color,border;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  background-color: #fff;
+  background-clip: padding-box;
+  cursor: pointer;
+}
+.mui-switch.mui-active {
+  border-color: #4cd964;
+  background-color: #4cd964;
+}
+.mui-switch:before {
+    font-size: 13px;
+    position: absolute;
+    top: 6px;
+    right: 11px;
+    content: 'Off';
+    text-transform: uppercase;
+    color: #999;
+}
+.mui-switch.mui-active:before {
+    right: auto;
+    left: 15px;
+    content: 'On';
+    color: #fff;
+}
+.mui-switch-handle {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: -1px;
+    width: 28px;
+    height: 28px;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-transition-property: -webkit-transform,width,left;
+    transition-property: transform,width,left;
+    border-radius: 16px;
+    background-color: #fff;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+    transition-duration: 0.2s;
+    transform: translate(0px, 0px);
+}
+.mui-switch-handle.active {
+  transition-duration: 0.2s;
+  transform: translate(45px, 1px);
+}

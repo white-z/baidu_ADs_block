@@ -1,0 +1,107 @@
+body {
+  overflow-x: hidden;
+}
+#content_right,
+div[data-general-xst],
+div[data-ecimtimesign],
+#s-top-left,
+#s-hotsearch-wrapper,
+.result-op.c-container.result,
+.c-tools.c-gap-left,
+.c-row.c-gap-top-small > .general_image_pic{
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: fixed !important;
+  width: .5px !important;
+  height: .5px !important;
+  top: -999% !important;
+  left: -999% !important;
+}
+
+#result_logo {
+  opacity: 0 !important;
+}
+#container #content_left {
+  width: 100% !important;
+}
+#container.sam_newgrid #content_left .c-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  animation: fadein .5s;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
+  border-radius: 8px;
+  transition: all .35s;
+  padding: 20px 20px;
+  cursor: pointer;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-15px) scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+#container.sam_newgrid #content_left .c-container.opening {
+  transition: all .6s;
+  height: 50px;
+  width: 300px;
+  background-color: #fff;
+  z-index: 9999999;
+  opacity: 1;
+  overflow: hidden;
+}
+#container.sam_newgrid #content_left .c-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.c-container .t,#content_left .c-gap-bottom-small {
+  margin-bottom: 3px !important;
+}
+#container.sam_newgrid #content_left .c-container .t a{
+  position: relative;
+  color: #999;
+  text-decoration: none;
+  padding: 5px 20px 5px 0;
+}
+#container.sam_newgrid #content_left .c-container .t a::after {
+  width: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: #999;
+  transition: all .25s;
+  transform: scale(0);
+}
+#container.sam_newgrid #content_left .c-container .t a:hover::after {
+  transform: scale(1);
+}
+#container.sam_newgrid #content_left .c-container .t > a > em {
+  text-decoration: none;
+}
+#container.sam_newgrid #content_left .c-container .c-abstract {
+  margin-bottom: 10px !important;
+  font-size: 16px !important;
+  line-height: 28px !important;
+}
+#container.sam_newgrid #content_left .c-container .c-gap-top-xsmall .a-spans {
+  flex: 1;
+  text-align: right;
+}
+.c-row.c-gap-top-small > .c-span-last {
+  width: 100%;
+  box-sizing: border-box;
+  float: left !important;
+}
+#container.sam_newgrid #content_left .c-container .c-gap-left {
+  margin-left: 0;
+}
