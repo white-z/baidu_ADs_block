@@ -34,6 +34,7 @@ function baiduADsBlock(){
     })
     init();
   }
+  
 
   function init() {
     $('#su').val('搜 索');
@@ -73,7 +74,7 @@ function baiduADsBlock(){
       })
     })
   }
-  
+
   $(document).bind('DOMNodeInserted', function(e) {
      handleInserted();
   });
