@@ -2,13 +2,21 @@ let open = window.localStorage.getItem('open') || 0;
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     open = request.info
     window.localStorage.setItem('open', open);
-    baiduADsBlock();
+    removeRight();
 })
+removeRight();
 baiduADsBlock();
-function baiduADsBlock(){
+function removeRight() {
   if(open != 1) {
-    return;
+    
+  } else {
+    $('#content_right').remove();
+    $('#content_left').attr('style', 'width: 100%;');
   }
+
+}
+function baiduADsBlock(){
+
   const list = [
     'CSDN',
     '博客园',
@@ -29,12 +37,18 @@ function baiduADsBlock(){
         that.remove();
       }
       if(that.attr('id') == 1) {
-        that.remove();
+        that.find('.t').children('a').each(function() {
+          const a = $(this);
+          if (a.text().indexOf('官网') === -1) {
+            that.remove();
+          }
+        })
       }
     })
     init();
+    removeRight();
   }
-  
+
 
   function init() {
     $('#su').val('搜 索');
@@ -78,30 +92,28 @@ function baiduADsBlock(){
   $(document).bind('DOMNodeInserted', function(e) {
      handleInserted();
   });
-
-  $(document).on('click', 'a', function(e) {
-    e.stopPropagation();
-  })
-
-  let opening = false;
-  $(document).on('click', '.c-container', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    const that = $(this);
-    let href = that.children('.t').children('a').attr('href')
-    if(! href) {
-      return;
-    }
-    if(opening === false) {
-      opening = true;
-      href = href.replace(/http/i, 'https');
-      that.addClass('opening');
-      that.attr('style', `transform: translate(-${that[0].getBoundingClientRect().left - 70}px, -${that[0].getBoundingClientRect().top + 100}px)`);
-      setTimeout(function() {
-        opening = false;
-        window.location.href = href;
-      }, 200)
-    }
-  })
-
 }
+$(document).on('click', 'a', function(e) {
+  e.stopPropagation();
+})
+
+let opening = false;
+$(document).on('click', '.c-container', function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  const that = $(this);
+  let href = that.children('.t').children('a').attr('href')
+  if(! href) {
+    return;
+  }
+  if(opening === false) {
+    opening = true;
+    href = href.replace(/http/i, 'https');
+    that.addClass('opening');
+    that.attr('style', `transform: translate(-${that[0].getBoundingClientRect().left - 70}px, -${that[0].getBoundingClientRect().top + 100}px)`);
+    setTimeout(function() {
+      opening = false;
+      window.location.href = href;
+    }, 200)
+  }
+})
