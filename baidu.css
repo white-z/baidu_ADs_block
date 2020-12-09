@@ -25,16 +25,19 @@ div[data-ecimtimesign],
 #container #content_left {
   width: 100% !important;
 }
-#container.sam_newgrid #content_left .c-container {
+#container.sam_newgrid #content_left .new-pmd.c-container {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
   animation: fadein .5s;
-  /* box-shadow: 0 2px 8px rgba(0,0,0,.2); */
+  box-shadow: 0 0px 4px rgba(0,0,0,.2);
   border-radius: 8px;
   transition: all .35s;
   padding: 20px 20px;
   cursor: pointer;
+}
+#content_left .new-pmd .c-border {
+  box-shadow: unset;
 }
 @keyframes fadein {
   from {
@@ -47,7 +50,7 @@ div[data-ecimtimesign],
   }
 }
 
-#container.sam_newgrid #content_left .c-container.opening {
+#container.sam_newgrid #content_left .new-pmd.c-container.opening {
   transition: all .6s;
   height: 50px;
   width: 300px;
@@ -56,21 +59,21 @@ div[data-ecimtimesign],
   opacity: 1;
   overflow: hidden;
 }
-#container.sam_newgrid #content_left .c-container:hover {
+#container.sam_newgrid #content_left .new-pmd.c-container:hover {
   transform: translateY(-3px);
   box-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 
-.c-container .t,#content_left .c-gap-bottom-small {
+.new-pmd.c-container .t,#content_left .c-gap-bottom-small {
   margin-bottom: 3px !important;
 }
-#container.sam_newgrid #content_left .c-container .t a{
+#container.sam_newgrid #content_left .new-pmd.c-container .t a:first-child{
   position: relative;
   color: #999;
   text-decoration: none;
   padding: 5px 20px 5px 0;
 }
-#container.sam_newgrid #content_left .c-container .t a::after {
+#container.sam_newgrid #content_left .new-pmd.c-container .t a::after {
   width: 100%;
   content: "";
   position: absolute;
@@ -82,18 +85,18 @@ div[data-ecimtimesign],
   transition: all .25s;
   transform: scale(0);
 }
-#container.sam_newgrid #content_left .c-container .t a:hover::after {
+#container.sam_newgrid #content_left .new-pmd.c-container .t a:hover::after {
   transform: scale(1);
 }
-#container.sam_newgrid #content_left .c-container .t > a > em {
+#container.sam_newgrid #content_left .new-pmd.c-container .t > a > em {
   text-decoration: none;
 }
-#container.sam_newgrid #content_left .c-container .c-abstract {
+#container.sam_newgrid #content_left .new-pmd.c-container .c-abstract {
   margin-bottom: 10px !important;
   font-size: 16px !important;
   line-height: 28px !important;
 }
-#container.sam_newgrid #content_left .c-container .c-gap-top-xsmall .a-spans {
+#container.sam_newgrid #content_left .new-pmd.c-container .c-gap-top-xsmall .a-spans {
   flex: 1;
   text-align: right;
 }
@@ -102,6 +105,6 @@ div[data-ecimtimesign],
   box-sizing: border-box;
   float: left !important;
 }
-#container.sam_newgrid #content_left .c-container .c-gap-left {
+#container.sam_newgrid #content_left .new-pmd.c-container .c-gap-left {
   margin-left: 0;
 }

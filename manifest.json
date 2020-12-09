@@ -1,9 +1,9 @@
 
 {
     "manifest_version": 2,
-    "name": "Baidu Hide AD",
+    "name": "Baidu广告屏蔽",
     "version": "1.0.0",
-    "description": "hidden Baidu.com ADs",
+    "description": "https://github.com/white-z/baidu_ADs_block",
     "permissions": ["tabs"],
     "browser_action": {
       "default_popup": "index.html"
