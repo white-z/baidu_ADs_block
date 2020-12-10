@@ -7,11 +7,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 removeRight();
 baiduADsBlock();
 function removeRight() {
+  // const hot = $('#content_right').find('[tpl=right_toplist1]');
+  // const comments = $('#content_right').find('[tpl=right_recommends_merge]');
   if(open != 1) {
-    
+
   } else {
     $('#content_right').remove();
-    $('#content_left').attr('style', 'width: 100%;');
   }
 
 }
@@ -19,17 +20,18 @@ function baiduADsBlock(){
 
   const list = [
     'CSDN',
+    'blog.csdn.net',
+    'cnblogs.com',
     '博客园',
     '百度经验',
     '脚本之家',
     '51CTO技术博客',
-    'cnblogs.com',
     '个人图书馆',
-    '360doc'
+    '360doc',
+    '程序园'
   ]
 
   init();
-  change();
   function handleInserted () {
     $('.c-container').each(function() {
       const that = $(this);
@@ -37,13 +39,14 @@ function baiduADsBlock(){
         that.remove();
       }
       if(that.attr('id') == 1) {
-        that.find('.t').children('a').each(function() {
-          const a = $(this);
-          if (a.text().indexOf('官网') === -1) {
+        that.find('.f13').children().each(function() {
+          const child = $(this);
+          if(child.attr('class').indexOf('tuiguang') > -1) {
             that.remove();
           }
         })
       }
+
     })
     init();
     removeRight();
@@ -77,18 +80,6 @@ function baiduADsBlock(){
     });
   }
 
-  function change() {
-    $('.c-container').each(function() {
-      const that = $(this);
-      that.find('.c-showurl').each(function() {
-        const a = $(this);
-        const html = a.html();
-        a.parent().append(`<span class="a-spans">${html}<span>`);
-        a.remove();
-      })
-    })
-  }
-
   $(document).bind('DOMNodeInserted', function(e) {
      handleInserted();
   });
@@ -115,5 +106,8 @@ $(document).on('click', '.c-container', function(e) {
       opening = false;
       window.location.href = href;
     }, 200)
+    setTimeout(function() {
+      that.hide();
+    }, 500)
   }
 })
