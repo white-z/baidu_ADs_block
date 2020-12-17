@@ -5,7 +5,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     removeRight();
 })
 removeRight();
-baiduADsBlock();
 function removeRight() {
   // const hot = $('#content_right').find('[tpl=right_toplist1]');
   // const comments = $('#content_right').find('[tpl=right_recommends_merge]');
@@ -16,7 +15,6 @@ function removeRight() {
   }
 
 }
-function baiduADsBlock(){
 
   const list = [
     'CSDN',
@@ -41,7 +39,7 @@ function baiduADsBlock(){
       if(that.attr('id') == 1) {
         that.find('.f13').children().each(function() {
           const child = $(this);
-          if(child.attr('class').indexOf('tuiguang') > -1) {
+          if(child.attr('class') && child.attr('class').indexOf('tuiguang') > -1) {
             that.remove();
           }
         })
@@ -51,7 +49,6 @@ function baiduADsBlock(){
     init();
     removeRight();
   }
-
 
   function init() {
     $('#su').val('搜 索');
@@ -80,10 +77,9 @@ function baiduADsBlock(){
     });
   }
 
-  $(document).bind('DOMNodeInserted', function(e) {
-     handleInserted();
-  });
-}
+$(document).bind('DOMNodeInserted', function(e) {
+   handleInserted();
+});
 $(document).on('click', 'a', function(e) {
   e.stopPropagation();
 })
