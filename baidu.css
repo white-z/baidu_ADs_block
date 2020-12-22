@@ -1,7 +1,6 @@
 body {
   overflow-x: hidden;
 }
-
 div[data-general-xst],
 div[data-ecimtimesign],
 #s-top-left,
@@ -22,9 +21,6 @@ div[data-ecimtimesign],
 #result_logo {
   opacity: 0 !important;
 }
-/* #container #content_left {
-  width: 100% !important;
-} */
 #container.sam_newgrid #content_left .new-pmd.c-container {
   position: relative;
   width: 100%;
